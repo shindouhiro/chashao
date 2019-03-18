@@ -2,6 +2,7 @@ import React from  'react';
 import { withStyles, createStyles } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
 import Img from '../images/20190314115321A5j1BfL2PxN9eDcz.jpeg';
+import Tag from '../components/Tag/tag';
 const styles = () => createStyles({
    wrap: {
      width: '96%',
@@ -40,6 +41,7 @@ const styles = () => createStyles({
 })
 const PostShow = (props) => {
     const { classes } = props;
+    console.log(props)
     return(
         <div className={classes.wrap}>
             <div className={classes.title}>
@@ -77,6 +79,7 @@ const PostShow = (props) => {
             尽管休·杰克曼最广为人知的是《X 战警》中的“金刚狼”一角，但在那之前他的演艺事业是从澳大利亚的剧院舞台上开始的，而且是音乐剧
             尽管休·杰克曼最广为人知的是《X 战警》中的“金刚狼”一角，但在那之前他的演艺事业是从澳大利亚的剧院舞台上开始的，而且是音乐剧
             </div>
+            <Tag />
         </div>
     )
 }

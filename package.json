@@ -5,12 +5,15 @@
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "@material-ui/icons": "^3.0.2",
+    "classnames": "^2.2.6",
     "prop-types": "latest",
     "react": "latest",
     "react-dom": "latest",
     "react-router": "^4.4.0",
     "react-router-dom": "^4.4.0",
-    "react-scripts": "latest"
+    "react-scripts": "latest",
+    "react-swipeable-views": "^0.13.1",
+    "video.js": "^7.4.1"
   },
   "scripts": {
     "start": "react-scripts start",

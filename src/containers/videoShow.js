@@ -1,6 +1,8 @@
 import React from 'react';
 import { withStyles, createStyles } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
+import { videoJsOptions } from '../lib/playerConfig';
+import VideoPlayer from '../lib/videoPlayer/VideoPlayer';
 import Img from '../images/mythofmerit_teaser.png' 
 const styles = () => createStyles({
     wrap: {
@@ -33,6 +35,13 @@ const VideoShow = (props) => {
     const { classes } = props;
     return(
         <div className={classes.wrap}>
+            <VideoPlayer 
+                {...videoJsOptions(
+                    `
+                    https://haoqicat-1253322599.costj.myqcloud.com/bitcoin-go/intro.mp4
+                    `
+                )}
+            />
             <div className={classes.list}>
                 <div className={classes.imgWrap}>
                     <img src={Img} className={classes.img} />
