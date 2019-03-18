@@ -38,6 +38,7 @@ const styles = () => ({
         backgroundSize: 'cover',
         minHeight: 80,
         minWidth: 80,
+        margin: '4px 4px 4px -12px',
     },
     hits: {
         color: '#ccc',
