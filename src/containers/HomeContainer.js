@@ -1,6 +1,8 @@
 import React from 'react';
-import Header from '../components/Header/header';
-import Swiper from '../components/Swiper/swiper'
+import Swiper from '../components/Swiper/swiper';
+import Title from '../components/Common/title';
+import PostIndex from '../components/Post/postIndex';
+import VideoIndex from '../components/Video/videoIndex';
 
 
 class HomeContainer extends React.Component{
@@ -8,6 +10,9 @@ class HomeContainer extends React.Component{
         return(
             <div>
                <Swiper />
+               <Title title="文章" />
+               <PostIndex />
+               <VideoIndex />
             </div>
         )
     }
