@@ -35,7 +35,7 @@ const styles = theme => ({
   },
   menuButton: {
     marginLeft: 12,
-    marginRight: 20,
+    marginRight: 60,
   },
   hide: {
     display: 'none',
@@ -70,6 +70,8 @@ const styles = theme => ({
     }),
     marginRight: 0,
   },
+  title: {
+  }
 });
 
 class Header extends React.Component {
@@ -106,7 +108,7 @@ class Header extends React.Component {
             >
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" color="inherit" noWrap>
+            <Typography variant="h6" color="inherit" noWrap className={classes.title}>
                 HomeIndex
             </Typography>
           </Toolbar>
