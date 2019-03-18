@@ -1,9 +1,14 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
+import Title from '../Common/title';
 import Img from '../../images/bg.jpeg';
 import hits from '../../images/hits.svg';
 const styles = () => ({
+    main: {
+        width: '94%',
+        margin: '0 auto',
+    },
     wrap: {
         display: 'flex',
         flexDirection: 'row',
@@ -51,7 +56,8 @@ const styles = () => ({
 const PostsIndex = (props) => {
     const { classes } = props;
     return (
-        <div>
+        <div className={classes.main}>
+            <Title title="文章" />
             <Paper>
                 <div className={classes.wrap}>
                     <div className={classes.content}>

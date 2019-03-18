@@ -21,6 +21,7 @@ const VideosIndex = (props) => {
                     </div>
                     <div className={classes.title}>
                         七龙珠七龙珠七龙珠
+                        七龙珠七龙珠七龙珠
                     </div>
                 </Paper>
                 <Paper className={classes.item}>

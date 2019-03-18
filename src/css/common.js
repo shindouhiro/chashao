@@ -56,12 +56,12 @@ export const styles = (theme) => ({
     },
     title: {
         color: 'black',
-        fontSize: '0.5rem',
+        fontSize: '.8rem',
         fontWeight: 700,
-        margin: '4px 0 0 0',
         overflow: 'hidden',
         textOverflow: 'ellipsis',
         whiteSpace: 'nowrap',
-        width: 100,
+        width: 120,
+        margin: '2px 0',
     }
 })
