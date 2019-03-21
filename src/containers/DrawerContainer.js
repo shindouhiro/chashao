@@ -1,7 +1,7 @@
 import React from 'react';
 import Drawer from '@material-ui/core/Drawer';
 import SideBar from '../components/Sidebar/sidebar';
-import { withStyles } from '../../node_modules/@material-ui/core';
+import { withStyles } from '@material-ui/core';
 const styles = {
     fullList: {
       width: 'auto',

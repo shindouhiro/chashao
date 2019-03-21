@@ -10,11 +10,11 @@ class RouterIndex extends React.Component {
     render() {
         return(
             <Router  history={history}>
-                <LayoutCss history={history}>
+                <LayoutCss>
                     <Switch>
                         <Route exact path="/" component={HomeContainer} />>
-                        <Route exact path="/post" component={PostContainer} />>
-                        <Route exact path="/video" component={VideoContainer} />>
+                        <Route exact path="/posts/:id" component={PostContainer} />>
+                        <Route exact path="/videos/:id" component={VideoContainer} />>
                     </Switch>
                 </LayoutCss>
             </Router>

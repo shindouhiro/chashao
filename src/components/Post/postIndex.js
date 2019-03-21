@@ -1,10 +1,11 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
+import { Link } from 'react-router-dom';
 import Title from '../Common/title';
 import Img from '../../images/bg.jpeg';
 import hits from '../../images/hits.svg';
-const styles = () => ({
+const styles = (theme) => ({
     main: {
         width: '94%',
         margin: '0 auto',
@@ -13,7 +14,7 @@ const styles = () => ({
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        margin: '6px 0',
+        margin: '-8px 0',
     },
     content: {
         padding: 6,
@@ -23,6 +24,10 @@ const styles = () => ({
         fontSize: '1rem',
         fontWeight: 700,
         lineHeight: '1em',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap',
+        width: 160,
     },
     intro: {
         padding: 6,
@@ -53,66 +58,56 @@ const styles = () => ({
         textIndent: '0.5em',
         margin: '0 0 0 20',
     },
+    bgImg: {
+        width: '100%',
+        height: 80,
+        padding: 4,
+    },
+    cardItem:  {
+        maxWidth: 250,
+        marginTop: 10,
+        marginBottom: 10,
+        marginRight: 10,
+        cursor: "pointer",
+        textDecoration: "none",
+        [theme.breakpoints.down('xs')]: {
+          width: 165
+        },
+    },
 })
 const PostsIndex = (props) => {
-    const { classes } = props;
+    const { classes, posts, source } = props;
+    console.log(posts)
     return (
         <div className={classes.main}>
             <Title title="文章" />
-            <Paper>
-                <div className={classes.wrap}>
-                    <div className={classes.content}>
-                        <div className={classes.intro}>
-                            <div className={classes.title}>How to Quit Your Job in 837 Easy Steps</div>
-                            <div className={classes.text}>Diverse perspectives also serve as a preventive measure against costly and embarrassing errors. Some famous missteps in recent years that have been a direct consequence of the lack of diversity include:
+            {
+                posts.map((post,index)=>{
+                      return(
+                        <Link key={index} to={`/${source}/${post.id}`} className={classes.cardItem}>
+                        <Paper>
+                            <div className={classes.wrap}>
+                                <div className={classes.content}>
+                                    <div className={classes.intro}>
+                                        <div className={classes.title}>{post.title}</div>
+                                        <div className={classes.text}>Diverse perspectives also serve as a preventive measure against costly and embarrassing errors. Some famous missteps in recent years that have been a direct consequence of the lack of diversity include:
+                                                    </div>
+                                        <div className={classes.hits}
+                                        >
+                                            <img src={hits} className={classes.icon} />
+                                            <div className={classes.hitsText}>{post.visited? post.visited : 0}</div>
                                         </div>
-                            <div className={classes.hits}
-                            >
-                                <img src={hits} className={classes.icon} />
-                                <div className={classes.hitsText}>666</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <img src={post.coverUrl} className={classes.bgImg}/>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div className={classes.bgImage}>
-                    </div>
-                </div>
-            </Paper>
-            <Paper>
-                <div className={classes.wrap}>
-                    <div className={classes.content}>
-                        <div className={classes.intro}>
-                            <div className={classes.title}>How to Quit Your Job in 837 Easy Steps</div>
-                            <div className={classes.text}>Diverse perspectives also serve as a preventive measure against costly and embarrassing errors. Some famous missteps in recent years that have been a direct consequence of the lack of diversity include:
-                                        </div>
-                            <div className={classes.hits}
-                            >
-                                <img src={hits} className={classes.icon} />
-                                <div className={classes.hitsText}>666</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={classes.bgImage}>
-                    </div>
-                </div>
-            </Paper>
-            <Paper>
-                <div className={classes.wrap}>
-                    <div className={classes.content}>
-                        <div className={classes.intro}>
-                            <div className={classes.title}>How to Quit Your Job in 837 Easy Steps</div>
-                            <div className={classes.text}>Diverse perspectives also serve as a preventive measure against costly and embarrassing errors. Some famous missteps in recent years that have been a direct consequence of the lack of diversity include:
-                                        </div>
-                            <div className={classes.hits}
-                            >
-                                <img src={hits} className={classes.icon} />
-                                <div className={classes.hitsText}>666</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={classes.bgImage}>
-                    </div>
-                </div>
-            </Paper>
+                        </Paper>
+                        </Link>
+                      )          
+                })
+            }
         </div>
     )
 }

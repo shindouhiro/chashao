@@ -23,7 +23,7 @@ export const styles = (theme) => ({
     },
     item: {
         flexBasis: '46%',
-        height: 120,
+        height: 180,
         margin: 2,
         padding: 4,
     },
@@ -58,10 +58,21 @@ export const styles = (theme) => ({
         color: 'black',
         fontSize: '.8rem',
         fontWeight: 700,
-        overflow: 'hidden',
-        textOverflow: 'ellipsis',
-        whiteSpace: 'nowrap',
-        width: 120,
-        margin: '2px 0',
-    }
+        // overflow: 'hidden',
+        // textOverflow: 'ellipsis',
+        // whiteSpace: 'nowrap',
+        width: 160,
+        margin: '10px 0',
+    },
+     cardItem:  {
+        maxWidth: 250,
+        marginTop: 10,
+        marginBottom: 10,
+        marginRight: 10,
+        cursor: "pointer",
+        textDecoration: "none",
+        [theme.breakpoints.down('xs')]: {
+          width: 165
+        },
+      },
 })

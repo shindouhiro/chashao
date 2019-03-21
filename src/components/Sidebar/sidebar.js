@@ -7,7 +7,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import MailIcon from '@material-ui/icons/Mail';
 import Divider from '@material-ui/core/Divider';
 import List from '@material-ui/core/List';
-import { Link as RouterLink } from 'react-router-dom'
+import { Link as RouterLink } from 'react-router-dom';
 import Link from '@material-ui/core/Link';
 
 const HomeLink = props => <RouterLink to="/" {...props} />

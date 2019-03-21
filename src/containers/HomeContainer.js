@@ -2,6 +2,8 @@ import React from 'react';
 import Swiper from '../components/Swiper/swiper';
 import PostIndex from '../components/Post/postIndex';
 import VideoIndex from '../components/Video/videoIndex';
+import Card from '../components/Card/card';
+import { RootNode } from '../gunDB';
 
 
 class HomeContainer extends React.Component{
@@ -76,11 +78,15 @@ class HomeContainer extends React.Component{
         })
       }
     render() {
+        const { videos, posts, hotPosts, hotVideos } = this.state;
+        console.log(posts)
         return(
             <div>
                <Swiper />
-               <PostIndex />
-               <VideoIndex />
+               <PostIndex posts={posts} source="posts"/>
+               <VideoIndex list={hotVideos} source="videos"/>
+               <Card list={hotPosts} source="posts" title="热点文章"/>
+               <Card list={hotVideos} source="videos" title="热点视频"/>
             </div>
         )
     }
