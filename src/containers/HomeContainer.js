@@ -5,6 +5,76 @@ import VideoIndex from '../components/Video/videoIndex';
 
 
 class HomeContainer extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+          videos: [],
+          posts: [],
+          hotVideos: [],
+          hotPosts: []
+        }
+      }
+    
+      componentWillMount(){
+        const { videos, posts, hotVideos, hotPosts} = this.state;
+        RootNode.get("videos")
+        .map(
+          (video) => (video && video.visited >=4) ? video:undefined
+        ).once((data, key)=>{
+          if(data===null){
+            return false;
+          }
+    
+          hotVideos.unshift(data);
+          this.setState({
+            hotVideos,
+          })
+          
+        })
+        RootNode.get("videos")
+        .map(
+          (video) => (video && video.status === "published") ? video:undefined
+        ).once((data, key)=>{
+          if(data===null){
+            return false;
+          }
+    
+          videos.unshift(data);
+          this.setState({
+            videos,
+          })
+          
+        })
+        //===================hostPost
+        RootNode.get("posts")
+        .map(
+          (post) => (post && post.visited >= 4) ? post:undefined
+        ).once((data, key)=>{
+          if(data===null){
+            return false;
+          }
+          
+          hotPosts.unshift(data);
+          this.setState({
+            hotPosts,
+          })
+          
+        })
+        RootNode.get("posts")
+        .map(
+          (post) => (post && post.status === "published") ? post:undefined
+        ).once((data, key)=>{
+          if(data===null){
+            return false;
+          }
+          
+          posts.unshift(data);
+          this.setState({
+            posts,
+          })
+          
+        })
+      }
     render() {
         return(
             <div>
