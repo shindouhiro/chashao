@@ -11,6 +11,7 @@ const styles = () => createStyles({
      margin: '0 auto',
      display: 'flex',
      flexDirection: 'column',
+     overflowX: 'hidden',
    },
    title: {
     padding: '14px 0 12px',
@@ -39,6 +40,7 @@ const styles = () => createStyles({
     fontWeight: 'normal',
     textAlign: 'justify',
     color: '#363636',
+    overflowX: 'hidden',
    },
 })
 class PostShow extends React.Component{
