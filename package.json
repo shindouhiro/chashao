@@ -10,8 +10,8 @@
     "prop-types": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "react-router": "^4.4.0",
-    "react-router-dom": "@last",
+    "react-router": "@last",
+    "react-router-dom": "^4.4.0",
     "react-scripts": "latest",
     "react-swipeable-views": "^0.13.1",
     "video.js": "^7.4.1"
