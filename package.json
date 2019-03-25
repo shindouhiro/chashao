@@ -10,7 +10,6 @@
     "prop-types": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "react-render-html": "^0.6.0",
     "react-router": "^4.4.0",
     "react-router-dom": "^4.4.0",
     "react-scripts": "latest",
@@ -28,5 +27,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "react-render-html": "^0.6.0"
+  }
 }
